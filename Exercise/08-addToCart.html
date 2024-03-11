@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add to Cart</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .addToCart-button {
+        font-size: 20px;
+        width: 150px;
+        padding: 8px;
+        border: none;
+        border-radius: 20px;
+        display: block;
+        color: white;
+        background-color: black;
+        margin: 12px auto;
+        cursor: pointer;
+      }
+
+      .cartAdded {
+        font-size: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="js-addToCart-button addToCart-button"
+      onclick="
+    addToCart();
+    "
+    >
+      Add to Cart
+    </button>
+    <p class="js-added cartAdded"></p>
+
+    <script>
+      function addToCart() {
+        const added = document.querySelector(".js-added");
+        added.innerHTML = "Added";
+
+        setTimeout(function () {
+          added.innerHTML = "";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

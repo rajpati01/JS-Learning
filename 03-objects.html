@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      /*
+      // Object - grouping multiple value together
+      // object creation
+      const product = {
+        name: "socks", // property-value pair
+        price: 1000,
+      };
+
+      //   excessing the each element of the object using dot notation
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      console.log(typeof product); // object is also another type of value
+
+      //   malnupulation of the element
+      product.price = 2000;
+      console.log(product);
+
+      //   inserting new property in an object
+      product.newProperty = true;
+      console.log(product);
+
+      // deletion of an property
+      delete product.newProperty;
+      console.log(product);
+      */
+
+      // bracket notation to excess the object
+      // - lets us use properties that don't work with dot notation
+      const product1 = {
+        name: "shirt",
+        ["delivery-time"]: "1 day", // create a property using bracket notation, [] are optional
+      };
+      console.log(product1);
+      console.log(product1.name);
+      console.log(product1["name"]);
+      console.log(product1["delivery-time"]);
+
+      //Nested object - we can save any value inside an object
+      const product2 = {
+        name: "pant",
+        size: "M",
+        rating: {
+          stars: 4.5,
+          count: 65,
+        },
+        //function can also be stored inside an object because they are considered as a type of value in JS
+        // function inside an object = method
+        fun: function function1() {
+          console.log("function inside an object");
+        },
+      };
+      console.log(product2);
+      console.log(product2.rating.stars);
+      product2.fun();
+
+      // console.log(); - is itself a method.
+      //console - object  and log()- is a method that is saved inside a console obj
+
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      Math.random(); // another examl=ple of method provided by JS
+    </script>
+  </body>
+</html>

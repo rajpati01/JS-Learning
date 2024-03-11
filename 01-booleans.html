@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolean and if-statement</title>
+  </head>
+  <body>
+    <script>
+      //  boolean -- True or False
+      if (true) {
+        // print hello in the console
+        console.log("Hello");
+      }
+
+      if (false) {
+        // does not pop up any message
+        alert("how dare you?");
+      }
+
+      //   truthly and falsy value - thery are also boolean value other than true or false
+
+      // truthly value - here variable 'var1' acts as true value and pops a message
+      var var1 = 5;
+      if (var1) {
+        alert("How are you?");
+      }
+
+      /* falsly - false, 0, '', NaN- not a number, undefied(only works in 'let' variable delecration)
+        and null         
+    */
+
+      let variable1;
+      if (variable1) {
+        console.log("undefined");
+      }
+
+      // to use 'const' we should initalize it as undefined
+      const variable2 = undefined;
+    </script>
+  </body>
+</html>

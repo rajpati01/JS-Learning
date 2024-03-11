@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews Carousel</title>
+    <link rel="stylesheet" href="css/reviews-carousel.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Our Reviews</h1>
+      <div class="container">
+        <!-- review 1 -->
+        <div class="review-item">
+          <div class="quote">&#8222;</div>
+          <div class="img">
+            <img src="images/review1.avif" alt="" />
+          </div>
+
+          <h3 class="name">Susan Smith</h3>
+          <p class="position">WEB DEVELOPER</p>
+          <p class="review-content">
+            &#8220;Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis sint aliquid aliquam quis alias. Ut, soluta? Quam iste
+            laboriosam voluptates aliquam incidunt in adna wieff wfidf adhs
+            askfhlk .&#8221;
+          </p>
+        </div>
+
+        <!-- review 2 -->
+        <div class="review-item">
+          <div class="quote">&#8222;</div>
+          <div class="img">
+            <img src="images/review2.avif" alt="" />
+          </div>
+
+          <h3 class="name">Rakshya Sen</h3>
+          <p class="position">COUNSULTANT</p>
+          <p class="review-content">
+            &#8220;Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis sint aliquid aliquam quis alias. Ut, soluta? Quam iste
+            laboriosam voluptates aliquam incidunt.&#8221;
+          </p>
+        </div>
+
+        <!-- review 3 -->
+        <div class="review-item">
+          <div class="quote">&#8222;</div>
+          <div class="img">
+            <img src="images/review3.jpg" alt="" />
+          </div>
+
+          <h3 class="name">Jasmen siem</h3>
+          <p class="position">WEB DEVELOPER</p>
+          <p class="review-content">
+            &#8220;Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis sint aliquid aliquam quis alias. Ut, soluta? Quam iste
+            laboriosam voluptates aliquam incidunt eidnas iub wew qwdawid
+            edin.&#8221;
+          </p>
+        </div>
+
+        <!-- review 4-->
+        <div class="review-item">
+          <div class="quote">&#8222;</div>
+          <div class="img">
+            <img src="images/review4.webp" alt="" />
+          </div>
+
+          <h3 class="name">Elite light</h3>
+          <p class="position">DEVELOPER</p>
+          <p class="review-content">
+            &#8220;Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Reiciendis sint aliquid aliquam quis alias. Ut, soluta? Quam iste
+            laboriosam voluptates aliquam incidunt.&#8221;
+          </p>
+        </div>
+
+        <div class="carousel">
+          <button class="prevous" onclick="previousReview()">&lt;</button>
+          <button class="next" onclick="nextReview()">&gt;</button>
+        </div>
+        <button class="surprise">Surprise Me</button>
+      </div>
+    </main>
+
+    <script>
+      let rev = 0;
+      carousel(rev);
+
+      function previousReview() {
+        rev = rev - 1;
+        carousel(rev);
+      }
+
+      function nextReview() {
+        rev = rev + 1;
+        carousel(rev);
+      }
+
+      function carousel(review) {
+        let reviews = document.getElementsByClassName("review-item");
+        let reviewContent = document.getElementsByClassName("review-content");
+
+        if (review >= reviews.length) {
+          review = 0;
+          rev = 0;
+        }
+        if (review < 0) {
+          review = reviews.length - 1;
+          rev = reviews.length - 1;
+        }
+
+        for (let i = 0; i < reviews.length; i++) {
+          reviews[i].classList.remove("active");
+        }
+        reviews[review].classList.add("active");
+      }
+    </script>
+  </body>
+</html>

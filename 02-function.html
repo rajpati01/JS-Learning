@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <script>
+      function print() {
+        console.log("i am a function");
+      }
+      print();
+
+      //   function parameters - puts a value into a function
+      function taxCalculated(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+      }
+
+      taxCalculated(400, 0.2); // value inside a parenthesis is a called argument
+      taxCalculated(500); // it uses 2nd argument as defunt as mentioned in function
+    </script>
+  </body>
+</html>

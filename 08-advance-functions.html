@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Functions</title>
+  </head>
+  <body>
+    <script>
+      /*
+      //function are kike just like number, string and boolean and can be saved in variable
+
+      //hosting -> functing can be called before they are created. it doesnot need to be in order.
+      greeting();
+      function greeting() {
+        console.log("hello");
+      }
+      greeting(); //calling a function
+
+      const num = 2;
+      //Anonymus function-> function without a name
+      //here we can call a function using variable name.
+      const function1 = function () {
+        console.log("hello2");
+      };
+      console.log(function1);
+      console.log(typeof function1);
+      function1();
+
+      const object1 = {
+        num: 2,
+        fun: function () {
+          console.log("hello3");
+        },
+      };
+      object1.fun();
+
+      //passing a function as a parameter to another function
+      //function we pass as a parameter -> call back function 
+
+      function run(param) {
+        param();
+      }
+      run(function () {
+        console.log("hello4");
+      });
+      */
+
+      /*
+
+      //built-in function
+      //1-> setTimeout() - takes two parameter
+
+      setTimeout(function () {
+        console.log("timeout");
+      }, 3000);
+
+      //Asynchronus code -> won't wait for a line to finish before going to next line ->adv. doesn't halt our code
+      console.log("next line");
+
+      //2-> setInterval()
+      setInterval(function () {
+        console.log("interval");
+      }, 2000);
+
+      console.log("next line"); 
+
+      */
+
+      //forEach() method -> way of iterating through an array
+      // 1st parameter- each value in array. 2nd parameter- cointan each index
+
+      ["make dinner", "wash dishes", "watch youtube"].forEach(function (
+        value,
+        index
+      ) {
+        // use of continue;  but for breake (regualr for loop)
+        if (value === "wash dishes") {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+    </script>
+  </body>
+</html>

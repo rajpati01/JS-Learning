@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Index of an String</title>
+  </head>
+  <body>
+    <script>
+      // Set the index to -1 at the start (so we'll assume
+      // the string 'search' doesn't exist in the array).
+      // If we find the string 'search' in the array, we
+      // will update the index.
+
+      let index = -1;
+      function returnIndex(arrayString) {
+        for (let i = 0; i < arrayString.length; i++) {
+          if (arrayString[i] === "search") {
+            index = i;
+            break;
+          }
+        }
+        return index;
+      }
+
+      let arrayString = ["good", "hello", "world"]; //problem of their is search here
+
+      console.log(returnIndex(arrayString));
+
+      arrayString = ["word", "not", "found", "search", "search"];
+      console.log(returnIndex(arrayString));
+
+      //using two parameters
+      function returnIndex1(arrayString1, word) {
+        for (let i = 0; i < arrayString1.length; i++) {
+          if (arrayString1[i] === word) {
+            index = i;
+            break;
+          }
+        }
+        return index;
+      }
+
+      let arrayString1 = ["green", "red", "yellow"];
+
+      console.log(returnIndex1(arrayString1, "red"));
+
+      arrayString1 = ["word", "not", "found", "search", "search"];
+      console.log(returnIndex1(arrayString1, "search"));
+    </script>
+  </body>
+</html>

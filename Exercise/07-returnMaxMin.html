@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Return min max value</title>
+  </head>
+  <body>
+    <script>
+      function minMax(nums) {
+        //set the starting values of min and max to null
+
+        const result = {
+          min: null,
+          max: null,
+        };
+
+        for (let i = 0; i < nums.length; i++) {
+          const value = nums[i];
+
+          // if the min is null OR the value is less than the min, update it.
+          if (result.min === null || value < result.min) {
+            result.min = value;
+          }
+
+          // if the max is null OR the value is less than the max, update it.
+          if (result.max === null || value > result.max) {
+            result.max = value;
+          }
+        }
+        return result;
+      }
+
+      console.log(minMax([1, -3, 5]));
+      console.log(minMax([-2, 3, -5, 7, 10]));
+
+      console.log(minMax([]));
+      console.log(minMax([3]));
+    </script>
+  </body>
+</html>

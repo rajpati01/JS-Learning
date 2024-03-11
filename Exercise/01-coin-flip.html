@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="js-result-display">Yes! Head</p>
+    <p>
+      <button
+        class="js-choice"
+        oneclick="
+      "
+        ;
+      >
+        HEAD
+      </button>
+      <button
+        class="js-choice"
+        oneclick="
+    "
+      >
+        TAIL
+      </button>
+    </p>
+  </body>
+
+  <script>
+    const randomNumber = Math.random();
+    let result;
+
+    //result = randomNumber > 0.5 ? "Head" : "Tail";
+    if (randomNumber > 0.5) {
+      result = "Head";
+    } else {
+      result = "Tail";
+    }
+    console.log(result);
+
+    let guess = "Head";
+
+    //console.log(guess === result ? "You win" : "You Lose");
+
+    if (guess === result) {
+      console.log("You win");
+    } else {
+      console.log("You lose");
+    }
+  </script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SetTimeout</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .start-button {
+        font-size: 20px;
+        width: 100px;
+        padding: 8px;
+        border: none;
+        border-radius: 20px;
+        display: block;
+        color: white;
+        background-color: black;
+        margin: 12px auto;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+      class="js-start-button start-button"
+      onclick="
+      updateButton();
+    "
+    >
+      Start
+    </button>
+
+    <script>
+      function updateButton() {
+        const button = document.querySelector(".js-start-button");
+
+        button.innerHTML = "Loading...";
+
+        setTimeout(function () {
+          button.innerHTML = "Finished!";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

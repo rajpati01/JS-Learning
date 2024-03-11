@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeetCOde Pratie</title>
+  </head>
+  <body></body>
+
+  <script>
+    function createCounter(n) {
+      let counterValue = n;
+
+      return function () {
+        const result = counterValue;
+        counterValue++;
+        return result;
+      };
+    }
+
+    // Example usage
+    const n = 10;
+    const counter = createCounter(n);
+
+    const output1 = [];
+    output1.push(counter()); // 10
+    output1.push(counter()); // 11
+    output1.push(counter()); // 12
+
+    console.log(output1); // Output: [10, 11, 12]
+
+    var arry1 = [1, 2, 3, 4];
+
+    const arry2 = arry1.map((x) => x * 2);
+
+    console.log(arry2);
+
+    // function compositions
+    function composeFunctions(functions, x) {
+      // If the array of functions is empty, return the identity function
+      if (functions.length === 0) {
+        return x;
+      }
+
+      // Start with the rightmost function
+      let result = functions[functions.length - 1](x);
+      console.log(result);
+
+      // Iterate through the array from right to left
+      for (let i = functions.length - 2; i >= 0; i--) {
+        result = functions[i](result);
+      }
+
+      return result;
+    }
+
+    // Example usage:
+    const functions = [(x) => x + 1, (x) => x * x, (x) => 2 * x];
+    const x = 4;
+
+    const output = composeFunctions(functions, x);
+    console.log(output); // Output: 65
+
+    // count number of arguments pass
+    function func1(a, b, c) {
+      console.log(arguments.length);
+    }
+
+    const countArgument = func1(1, 2, 3);
+
+    const string = "what's your perfect first date?"
+      .split("")
+      .map(parseInt)
+      .filter((a) => a)
+      .reduce((a, b) => a + b)
+      .toString()
+      .split("")
+      .reverse()
+      .join("");
+
+    console.log(string);
+  </script>
+</html>

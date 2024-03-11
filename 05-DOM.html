@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+
+    <script>
+      // JS feature - it contain HTML elemeent inside JS
+      // DOM combines JS and HTML together
+      console.log(document.title);
+      document.title = "changed";
+
+      //when HTML element is insde JS it is an object
+      console.log(document.body);
+      console.log(typeof document.body);
+
+      // Docomunt object model
+      /* 
+        -another built in object  -> document object
+        -it is linked to the web page 
+        - it represent/ model the web page
+        - it has both properties and methods
+        */
+      document.body.innerHTML = "world!";
+      document.title = "good work";
+    </script>
+  </body>
+</html>

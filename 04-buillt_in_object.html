@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Built in objects</title>
+  </head>
+  <body>
+    <script>
+      // built-in objects --- JSON & localStorage
+
+      const product2 = {
+        name: "pant",
+        size: "M",
+        rating: {
+          stars: 4.5,
+          count: 65,
+        },
+        fun: function function1() {
+          console.log("function inside an object");
+        },
+      };
+      console.log(product2);
+      console.log(product2.rating.stars);
+      product2.fun();
+
+      //JSON - JavaScropt Object Notation
+      /*
+            bassicaly JSOn is a syntx that has less features
+            must use " "
+            does not support functions
+        */
+
+      // features of JSON
+      //1--> Convert JS object to jSON using stringify()
+
+      console.log(typeof JSON.stringify(product2)); //returns string
+      console.log(JSON.stringify(product2));
+
+      // 2--> Convert JSON -> JS Object using parse()
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+      /* localStorage  
+      permanent way of storing value */
+
+      //tosave the value inside a localStorage
+      /*
+        first convert score object to JSON string because localStorage only support 'string' 
+        */
+      localStorage.setItem("message", "hello"); // (string, value)
+
+      // to get a value outside a localStorage
+      /*
+        as localStorage in just a string we first have to convert back to object using JSON.parse 
+        */
+      console.log(localStorage.getItem("message")); // (string)
+    </script>
+  </body>
+</html>

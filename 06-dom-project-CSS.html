@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM projects</title>
+    <style>
+      body {
+        font-family: Arial;
+        font-size: 16px;
+      }
+
+      .subscribeButton {
+        color: white;
+        background-color: black;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        margin-bottom: 25px;
+        cursor: pointer;
+      }
+
+      .costInput {
+        padding: 10px;
+        font-size: 15px;
+      }
+
+      .claculate {
+        font-size: 15px;
+        padding: 12px 15px;
+        color: white;
+        background-color: green;
+        border: none;
+        cursor: pointer;
+      }
+
+      .is-subscribed {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="Subscribe()" class="js-subscribe-button subscribeButton">
+      Subscribe
+    </button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+
+    <input
+      placeholder="Cost of order"
+      class="js-cost-input costInput"
+      onkeydown="
+      handelCostKeyDown(event);
+      "
+    />
+    <button onclick="shippingCalculate()" class="claculate">Calculate</button>
+    <p class="js-totalPrice"></p>
+
+    <script>
+      //for subscribed button
+      function Subscribe() {
+        const buttonElement = document.querySelector(".js-subscribe-button");
+
+        if (buttonElement.innerText === "Subscribe") {
+          buttonElement.innerHTML = "Subscribed";
+          buttonElement.classList.add("is-subscribed");
+        } else {
+          buttonElement.innerHTML = "Subscribe";
+          buttonElement.classList.remove("is-subscribed");
+        }
+      }
+
+      // for Amozon Shipping Calculator
+      function shippingCalculate() {
+        const inputElement = document.querySelector(".js-cost-input");
+        let cost = Number(inputElement.value); // it convert the value string into a number
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+        document.querySelector(".js-totalPrice").innerHTML = `$${cost}`;
+      }
+
+      //to work on key stock
+      function handelCostKeyDown(event) {
+        // console.log(event.key)
+        if (event.key === "Enter") {
+          shippingCalculate();
+        }
+      }
+    </script>
+  </body>
+</html>

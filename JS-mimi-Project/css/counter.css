@@ -1,0 +1,41 @@
+* {
+  font-family: sans-serif;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background: #f1f5f8;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 350px;
+  width: 450px;
+}
+
+.counter {
+  color: rgb(57, 57, 157);
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.number-display {
+  font-size: 80px;
+  margin-top: 10px;
+  color: green;
+}
+.btn {
+  height: 30px;
+  border: 2px solid rgb(167, 213, 240);
+  border-radius: 8px;
+  margin: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: -8px;
+  color: rgb(64, 117, 174);
+}
